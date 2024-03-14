@@ -1,0 +1,160 @@
+h1{
+	color:#0099FF;
+	font-size:250%;
+	padding-top:60px;
+	text-align:center;
+}
+p{
+	color:#0099FF;
+	text-align: justify;
+	font-size: 110%;
+	margin:15px;
+}
+label{
+	color:#FFFFFF;
+}
+html
+{
+	height: 100%;
+	width:100%;
+    padding: 0;
+}
+body{
+	background-color:#000000;
+	/*color:#0099FF;*/
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+body.page1-background
+{
+	background-color:#000000;
+	background-image:url(../IMG/vecteezy_autumn-rain-in-the-forest-road-3d-rendering-computer_22453355.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body.ordi_background
+{
+	background-color:#000000;
+	background-image:url(../IMG/ordinateur.jpg);
+	background-size: contain;/*pour img non déformée*/
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+body.cadenas_background
+{
+	background-color:#000000;
+	background-image:url(../IMG/dame/cadenas1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+.bouton
+{
+	display: block;
+ 	margin:auto;
+	background-color:#000050;
+	border-radius:15px;/* Pour arrondir le bouton*/
+	border: thick double #0099FF;
+	color:#FFFFFF;
+	text-align:center;
+	align-self: center;
+	font-size:30px;
+	padding-left:60px;
+	padding-right:60px;
+	padding-top:40px;
+	padding-bottom:40px;
+	cursor:pointer;
+}
+#boutons{
+	display: block;
+	text-align:center;
+	align-self: center;
+	align-items: center;
+	font-size:25px;
+	padding-bottom:10px;
+}
+#deverouille{
+	display:block;
+	padding-top:10px;
+	font-size: 20px;
+	background-color: #DDDDDD;
+	cursor: pointer;
+	border-radius:100px;
+	border:thick #111111;
+	text-align:center;
+	align-self: center;
+	align-items:center;
+	
+}
+#bureau_ordi{
+	display: block;
+    margin: 0 auto;
+    max-width: 80%;
+	width:auto;
+    height: auto;
+}
+#cadenas{
+	font-size:50%;
+	display:block;
+	text-align:center;
+	position: relative;
+}
+#verifier{
+	align-self:center;
+}
+#centrer{
+	font-size: 200%;/*marche pas sans*/
+	position: absolute;
+    top: 50%;/*Le placer à 50% de la page en hauteur (aller au milieu de la page verticalement)*/
+    left: 50%;
+    transform: translate(-50%, -50%);/*le décaller de 50% de sa taille en haut et à gauche pour qu'il soit centré parfaitement*/
+}
+#identifiant{
+	font-size:90%;/*ne fonctionne pas sans...*/
+}
+#mdp{
+	font-size:90%;
+}
+#p3{
+	color:#FFFFFF;
+}
+#images{
+	size:100%;
+}
+#continuer{
+	color:#FFFFFF;
+}
+#aligner
+{
+	display: flex;
+	justify-content: space-between;
+}
+#img1
+{
+	float: right;
+	margin-left: 7px;
+}
+#page
+{
+	width: 90vw;
+	margin:0 auto;
+	background-color:#000000;
+	text-align: left;
+	align-content: flex-start;
+}
+#middle{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

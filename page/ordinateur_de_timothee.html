@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Ordinateur de Thimothée</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body class="ordi_background">
+		<div hidden id="page">ordi_timo</div>
+		<!--Il faudrait faire des variables qui contiennent la validité des choses (Si le mot de passe a déjà été validé, quand on va à la page 3, on va directement sur l'ordinateur)
+		Soit on modifie le href de la page qui permet d'accéder à cette page
+		Soit c'est le javaScript qui s'occupe de l'affichage de la page en fonction des variables (et tout serait déjà stocké dans la page (les div ; les p ; etc...))
+		Soit on écrase cette page par la page de l'ordi dévérouillé
+		-->
+		<div id="centrer">
+		<label for="identifiant">Identifiant : </label><br>
+		<input id="identifiant" type="text" placeholder="Identifiant"><br>
+		<br>
+		<label for="mdp">Mot de passe : </label><br>
+		<input id="mdp" type="password" placeholder="Mot de passe"><br>
+		</div>	
+		<!--Mettre un logo flèche du bas pour sortir si on clique dessus-->
+		<!--<a href="chambre_de_timothee.html" ><button type="button">Retourner à la vue globale</a>-->
+
+		<script src="../script/script.js"></script>
+	</body>
+</html>
