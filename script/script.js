@@ -1,10 +1,8 @@
-// Identifier la page courante pour que le script fasse quelque chose de différent en fonction de la page
-
-var doc1="non";//pour la page dossier.html
+var doc1="non";
 var doc2="non";
 var possible="oui";
 
-function degriser(z){//Enlève ce qui est écrit en gris dans l'entrée
+function degriser(z){
 	z.value='';
 	z.style.color='#000000';
 }
@@ -21,12 +19,12 @@ if (document.getElementById('page').textContent==='page2'){
 	var index=0;
 	
 	function randomSpeed(min,max){
-	  return Math.floor(Math.random()*(max-min)+min);//Math.floor arrondit. Math.random() renvoie un nombre décimal entre 0 et 1.
+	  return Math.floor(Math.random()*(max-min)+min);
 	}
 
 	function play (objet,texte) {
-	  if (texte[index-1]!=="<"){//Si y a pas de balises
-		objet.innerHTML=texte.slice(0,index);//affiche du rang 0 jusqu'au rang index non compris.
+	  if (texte[index-1]!=="<"){
+		objet.innerHTML=texte.slice(0,index);
 		index++;
 		timer = setTimeout(function() {
 			play(objet, texte);
@@ -47,10 +45,10 @@ if (document.getElementById('page').textContent==='page2'){
 	  if (index>=texte.length){
 		 clearTimeout(timer)
 		index=0;
-		if (objet === histoire1) { // Si le premier récit est terminé
+		if (objet === histoire1) {
 			timer=setTimeout(function() {
-				play(histoire2, texte2); // Démarrer le deuxième récit après un court délai
-			}, 200);//Delai de 200 avant exécuter play
+				play(histoire2, texte2);
+			}, 200);
         }
 		else if (objet===histoire2){
 			timer=setTimeout(function() {
@@ -59,7 +57,7 @@ if (document.getElementById('page').textContent==='page2'){
 		}
 		else{
 			document.addEventListener("keyup", function(event) {
-				if (event.keyCode === 13) {//Si entrer est pressé
+				if (event.keyCode === 13) {
 					window.location.replace("chambre_de_timothee.html");
 		}
 	});	
@@ -69,7 +67,7 @@ if (document.getElementById('page').textContent==='page2'){
 	  }
 	}
 
-	var timer=setTimeout(play(histoire1,texte1),200);//Delai de 200 avant exécuter play
+	var timer=setTimeout(play(histoire1,texte1),200);
 }
 
 
@@ -77,16 +75,16 @@ if (document.getElementById('page').textContent==='page2'){
 
 else if (document.getElementById('page').textContent==='ordi_timo'){
 	function verifier(id,mdp){
-		if (id==="mrpolichinel" && mdp=="lAsouPOch0u"){//A modifier
+		if (id==="mrpolichinel" && mdp=="lAsouPOch0u"){
 			return true;
 		}
 		else{
-			//document.write(id);
+			
 			return false;
 		}
 	}
 	document.addEventListener("keyup",function(event){
-		if (event.keyCode===13){//Et qu'on est dans l'entrée mdp
+		if (event.keyCode===13){
 			var identifiant=document.getElementById("identifiant").value;
 			var mdp=document.getElementById("mdp").value;
 			if(verifier(identifiant,mdp)===true){
@@ -103,7 +101,7 @@ else if (document.getElementById('page').textContent==='ordi_timo'){
 
 else if (document.getElementById('page').textContent==='ordi_dev'){
 	function dossier_crypte(){
-		var code=prompt("Le dossier est crypté, entrez la clé de sécurité","");//Pas génial car ce que l'on tape est visible mais bon...
+		var code=prompt("Le dossier est crypté, entrez la clé de sécurité","");
 		if (code==="sfRedF96@pasC00L"){
 			window.location.replace("dossier.html");
 		}
@@ -121,7 +119,6 @@ else if (document.getElementById('page').textContent === 'Dossier') {
 		if (possible==="oui"){
 			doc1 = "oui";
 			if (doc2 === "oui") {
-				// Créer un bouton lorsque les deux documents sont ouverts
 				createButton();
 				possible="non";
 			}
@@ -132,7 +129,6 @@ else if (document.getElementById('page').textContent === 'Dossier') {
 		if (possible==="oui"){
 			doc2 = "oui";
 			if (doc1 === "oui") {
-				// Créer un bouton lorsque les deux documents sont ouverts
 				createButton();
 				possible="non";
 			}
@@ -140,13 +136,12 @@ else if (document.getElementById('page').textContent === 'Dossier') {
     });
 
     function createButton() {
-        // Créer un nouvel élément bouton
         var bouton = document.createElement("button");
         bouton.innerHTML = "Continuer";
         bouton.style.backgroundColor = "#0088AA";
 		bouton.style.color = "white";
 		bouton.style.display="block";
-		bouton.style.borderRadius="15px";/* Pour arrondir le bouton*/
+		bouton.style.borderRadius="15px";
 		bouton.style.border= "thick double #006699";
 		bouton.style.textAlign="center";
 		bouton.style.alignSelf= "center";
@@ -154,12 +149,10 @@ else if (document.getElementById('page').textContent === 'Dossier') {
 		bouton.style.marginRight="auto";
 		bouton.style.marginTop="15px";
 
-        // Ajouter un écouteur d'événements pour rediriger l'utilisateur vers introspection.html lorsque le bouton est cliqué
         bouton.addEventListener("click", function() {
             window.location.replace("introspection.html");
         });
         
-        // Ajouter le bouton à la page
         document.body.appendChild(bouton);
     }
 }
@@ -198,11 +191,6 @@ else if(document.getElementById('page').textContent==='cadenas'){
 		}
 		return;
 		
-		//if (parseInt(document.getElementById("btn1").textContent)<9){
-			//document.getElementById("btn1").textContent=toString(parseInt(document.getElementById("btn1").textContent)+1);
-			
-			//else{
-				//document.getElementById("btn1").textContent="0";
 	}
 	function verifier(){
 		if (document.getElementById("btn1").textContent==="6" && document.getElementById("btn2").textContent==="3" && document.getElementById("btn3").textContent==="7"){
@@ -215,7 +203,7 @@ else if(document.getElementById('page').textContent==='cadenas'){
 }
 else if (document.getElementById('page').textContent==='devanture'){
 	function ouvrir_porte(){
-		var code=prompt("La porte est vérouillée par un code digital","");//Pas génial car ce que l'on tape est visible mais bon...
+		var code=prompt("La porte est vérouillée par un code digital","");
 		if (code==="paco"){
 			window.location.replace("maison.html");
 		}
@@ -236,12 +224,12 @@ else if (document.getElementById('page').textContent==='Introspection'){
 	var index=0;
 	
 	function randomSpeed(min,max){
-	  return Math.floor(Math.random()*(max-min)+min);//Math.floor arrondit. Math.random() renvoie un nombre décimal entre 0 et 1.
+	  return Math.floor(Math.random()*(max-min)+min);
 	}
 
 	function play (objet,texte) {
-	  if (texte[index-1]!=="<"){//Si y a pas de balises
-		objet.innerHTML=texte.slice(0,index);//affiche du rang 0 jusqu'au rang index non compris.
+	  if (texte[index-1]!=="<"){
+		objet.innerHTML=texte.slice(0,index);
 		index++;
 		timer = setTimeout(function() {
 			play(objet, texte);
@@ -262,14 +250,14 @@ else if (document.getElementById('page').textContent==='Introspection'){
 	  if (index>=texte.length){
 		 clearTimeout(timer)
 		index=0;
-		if (objet === lieu) { // Si le premier récit est terminé
+		if (objet === lieu) { 
 			timer=setTimeout(function() {
-				play(lieu2, texte2); // Démarrer le deuxième récit après un court délai
-			}, 200);//Delai de 200 avant exécuter play
+				play(lieu2, texte2); 
+			}, 200);
         }
 		else{
 			document.addEventListener("keyup", function(event) {
-				if (event.keyCode === 13) {//Si entrer est pressé
+				if (event.keyCode === 13) {
 					window.location.replace("chez_la_dame/entree.html");
 				}
 			});	
@@ -279,22 +267,21 @@ else if (document.getElementById('page').textContent==='Introspection'){
 	  }
 	}
 
-	var timer=setTimeout(play(lieu,paroles),200);//Delai de 200 avant exécuter play
+	var timer=setTimeout(play(lieu,paroles),200);
 }
 
 
 else if (document.getElementById('page').textContent==='porte1'){
 	function verifier(mdp){
-		if (mdp=="route"){//A modifier
+		if (mdp=="route"){
 			return true;
 		}
 		else{
-			//document.write(id);
 			return false;
 		}
 	}
 	document.addEventListener("keyup",function(event){
-		if (event.keyCode===13){//Et qu'on est dans l'entrée mdp
+		if (event.keyCode===13){
 			var mdp=document.getElementById("mdp").value;
 			if(verifier(mdp)===true){
 				alert("Correct");
@@ -302,10 +289,9 @@ else if (document.getElementById('page').textContent==='porte1'){
 			}
 			else{
 				alert("Le code n'est pas bon !");
-				//message d'erreur et effacer mot de passe de l'entrée
+				
 			}
 		}
-		//else afficher message d'erreur identifiant ou mdp erronés
 	});
 }
 else if (document.getElementById('page').textContent==='fin'){
@@ -318,12 +304,12 @@ else if (document.getElementById('page').textContent==='fin'){
 	var index=0;
 	
 	function randomSpeed(min,max){
-	  return Math.floor(Math.random()*(max-min)+min);//Math.floor arrondit. Math.random() renvoie un nombre décimal entre 0 et 1.
+	  return Math.floor(Math.random()*(max-min)+min);
 	}
 
 	function play (objet,texte) {
-	  if (texte[index-1]!=="<"){//Si y a pas de balises
-		objet.innerHTML=texte.slice(0,index);//affiche du rang 0 jusqu'au rang index non compris.
+	  if (texte[index-1]!=="<"){
+		objet.innerHTML=texte.slice(0,index);
 		index++;
 		timer = setTimeout(function() {
 			play(objet, texte);
@@ -344,14 +330,14 @@ else if (document.getElementById('page').textContent==='fin'){
 	  if (index>=texte.length){
 		 clearTimeout(timer)
 		index=0;
-		if (objet === lieu) { // Si le premier récit est terminé
+		if (objet === lieu) {
 			timer=setTimeout(function() {
-				play(lieu2, texte2); // Démarrer le deuxième récit après un court délai
-			}, 200);//Delai de 200 avant exécuter play
+				play(lieu2, texte2);
+			}, 200);
         }
 		else{
 			document.addEventListener("keyup", function(event) {
-				if (event.keyCode === 13) {//Si entrer est pressé
+				if (event.keyCode === 13) {
 					window.location.replace("img_fin.html");
 				}
 			});	
@@ -361,5 +347,5 @@ else if (document.getElementById('page').textContent==='fin'){
 	  }
 	}
 
-	var timer=setTimeout(play(lieu,paroles),200);//Delai de 200 avant exécuter play
+	var timer=setTimeout(play(lieu,paroles),200);
 }
